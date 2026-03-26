@@ -38,7 +38,7 @@ export const products: Product[] = [
     shortDescription: 'Our bestselling multi-purpose whipped tallow balm for deep hydration and skin restoration.',
     inStock: true,
     subscriptionPrice: 15.99,
-    images: ['product-gradient-1', 'product-gradient-2', 'product-gradient-3', 'product-gradient-4', 'product-gradient-5'],
+    images: ['/images/products/sb-1.jpg', '/images/products/sb-2.jpg', '/images/products/sb-3.jpg', '/images/products/sb-4.jpg', '/images/products/sb-5.jpg'],
     keyBenefits: [
       'Deep hydration for dry and damaged skin',
       'Combats signs of aging with natural vitamins',
@@ -82,7 +82,7 @@ export const products: Product[] = [
     shortDescription: 'Single-ingredient natural moisturiser. Pure grass-fed tallow, nothing else.',
     inStock: true,
     subscriptionPrice: 11.99,
-    images: ['product-gradient-2', 'product-gradient-3', 'product-gradient-4', 'product-gradient-5', 'product-gradient-1'],
+    images: ['/images/products/pure-1.png', '/images/products/pure-2.jpg', '/images/products/pure-3.jpg'],
     keyBenefits: [
       'Single-ingredient purity',
       'Ideal for ultra-sensitive skin',

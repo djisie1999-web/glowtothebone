@@ -89,16 +89,24 @@ export default function ProductDetail({ product }: { product: Product }) {
             {/* Image Gallery */}
             <AnimatedSection>
               <div>
-                <div className={`aspect-square rounded-2xl ${product.images[currentImage]} mb-4 shadow-lg`} />
+                <div className="aspect-square rounded-2xl overflow-hidden mb-4 shadow-lg bg-cream-dark">
+                  <img
+                    src={product.images[currentImage]}
+                    alt={`${product.name} - Image ${currentImage + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="flex gap-3">
                   {product.images.map((img, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrentImage(i)}
-                      className={`w-16 h-16 rounded-lg ${img} transition-all ${
+                      className={`w-16 h-16 rounded-lg overflow-hidden transition-all ${
                         i === currentImage ? 'ring-2 ring-green ring-offset-2' : 'opacity-60 hover:opacity-100'
                       }`}
-                    />
+                    >
+                      <img src={img} alt={`${product.name} thumbnail ${i + 1}`} className="w-full h-full object-cover" />
+                    </button>
                   ))}
                 </div>
               </div>

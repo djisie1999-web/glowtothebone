@@ -5,11 +5,11 @@ import AnimatedSection from './AnimatedSection';
 
 interface SliderProps {
   title: string;
-  beforeLabel: string;
-  afterLabel: string;
+  beforeImage: string;
+  afterImage: string;
 }
 
-function ComparisonSlider({ title, beforeLabel, afterLabel }: SliderProps) {
+function ComparisonSlider({ title, beforeImage, afterImage }: SliderProps) {
   const [position, setPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
@@ -36,25 +36,41 @@ function ComparisonSlider({ title, beforeLabel, afterLabel }: SliderProps) {
       <h3 className="font-serif text-2xl font-semibold text-text mb-4">{title}</h3>
       <div
         ref={containerRef}
-        className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-ew-resize select-none shadow-lg"
+        className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-ew-resize select-none shadow-lg bg-cream"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
       >
-        {/* After (full) */}
-        <div className="absolute inset-0 after-gradient flex items-center justify-center">
-          <span className="text-white/80 font-serif text-xl tracking-wider">{afterLabel}</span>
-        </div>
+        {/* After (full background) */}
+        <img
+          src={afterImage}
+          alt="After treatment"
+          className="absolute inset-0 w-full h-full object-cover"
+          draggable={false}
+        />
 
         {/* Before (clipped) */}
         <div
-          className="absolute inset-0 before-gradient flex items-center justify-center overflow-hidden"
+          className="absolute inset-0 overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         >
-          <span className="text-white/80 font-serif text-xl tracking-wider">{beforeLabel}</span>
+          <img
+            src={beforeImage}
+            alt="Before treatment"
+            className="absolute inset-0 w-full h-full object-cover"
+            draggable={false}
+          />
         </div>
+
+        {/* Labels */}
+        <span className="absolute bottom-4 left-4 bg-black/50 text-white text-xs font-medium px-3 py-1 rounded-full backdrop-blur-sm">
+          Before
+        </span>
+        <span className="absolute bottom-4 right-4 bg-black/50 text-white text-xs font-medium px-3 py-1 rounded-full backdrop-blur-sm">
+          After
+        </span>
 
         {/* Divider */}
         <div
@@ -94,20 +110,20 @@ export default function BeforeAfter() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <ComparisonSlider
               title="Psoriasis Relief"
-              beforeLabel="Before"
-              afterLabel="After"
+              beforeImage="/images/before-after/psoriasis-before.jpg"
+              afterImage="/images/before-after/psoriasis-after.jpg"
             />
             <ComparisonSlider
               title="Eczema Relief"
-              beforeLabel="Before"
-              afterLabel="After"
+              beforeImage="/images/before-after/eczema-before.avif"
+              afterImage="/images/before-after/eczema-after.jpg"
             />
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.3}>
           <p className="text-center text-text-muted text-sm mt-8 italic">
-            Individual results may vary. These images represent typical outcomes reported by our customers.
+            Individual results may vary. These images represent real outcomes reported by our customers.
           </p>
         </AnimatedSection>
       </div>

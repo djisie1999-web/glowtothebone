@@ -24,8 +24,12 @@ export default function ProductCard({ product }: { product: Product }) {
     <Link href={`/products/${product.slug}`} className="group block">
       <div className="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-border/50">
         {/* Image */}
-        <div className="relative aspect-square overflow-hidden">
-          <div className={`absolute inset-0 ${product.images[0]} transition-transform duration-700 group-hover:scale-110`} />
+        <div className="relative aspect-square overflow-hidden bg-cream-dark">
+          <img
+            src={product.images[0]}
+            alt={product.name}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
 
           {product.onSale && (
             <span className="sale-badge absolute top-4 left-4 bg-gold text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">

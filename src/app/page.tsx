@@ -14,12 +14,13 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-dark via-green to-green-light" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,134,11,0.15),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,255,255,0.05),transparent_60%)]" />
-
-        <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-gold/10 blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+        <img
+          src="/images/lifestyle/hero.png"
+          alt="Glow to the Bone natural skincare"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-dark/80 via-green-dark/60 to-transparent" />
+        <div className="absolute inset-0 bg-black/20" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <p className="text-gold-light uppercase tracking-[0.3em] text-sm md:text-base mb-6 font-medium animate-fade-in-up">
@@ -101,7 +102,9 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <AnimatedSection>
-              <div className="aspect-[4/5] rounded-3xl product-gradient-1 shadow-xl" />
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
+                <img src="/images/lifestyle/signature-blend-lifestyle.jpg" alt="Signature Blend Whipped Tallow" className="w-full h-full object-cover" />
+              </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <div>

@@ -74,9 +74,11 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <h1 className="font-serif text-xl md:text-2xl font-semibold tracking-wider text-text text-center leading-tight">
-                GLOW TO THE BONE
-              </h1>
+              <img
+                src="/images/logo.png"
+                alt="Glow to the Bone Skincare"
+                className="h-12 md:h-14 w-auto"
+              />
             </Link>
 
             {/* Right side nav + icons */}
