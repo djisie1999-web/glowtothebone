@@ -102,8 +102,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <AnimatedSection>
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
-                <img src="/images/lifestyle/signature-blend-lifestyle.jpg" alt="Signature Blend Whipped Tallow" className="w-full h-full object-cover" />
+              <div className="rounded-3xl overflow-hidden shadow-xl bg-white">
+                <img src="/images/lifestyle/signature-blend-lifestyle.jpg" alt="Signature Blend Whipped Tallow" className="w-full h-auto object-contain" />
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
